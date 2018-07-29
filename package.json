@@ -1,6 +1,6 @@
 {
 	"name": "peak-design",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Peak design React component library.",
 	"main": "build/rrpm.js",
 	"module": "build/rrpm.module.js",
