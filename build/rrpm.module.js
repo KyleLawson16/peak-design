@@ -89,26 +89,26 @@ var WhiteSpace$1 = function (_Component) {
   createClass(WhiteSpace$$1, [{
     key: "render",
     value: function render() {
-      var isVertical = true;
       var _props = this.props,
           height = _props.height,
           width = _props.width,
           orientation = _props.orientation,
           backgroundColor = _props.backgroundColor;
 
-      if (width && !height || orientation === "horizontal") isVertical = false;
-      if (isVertical) return React.createElement("div", {
+      if (width && !height || orientation === "horizontal") {
+        return React.createElement("div", {
+          style: {
+            width: width,
+            height: height,
+            backgroundColor: backgroundColor,
+            display: "inline-block"
+          }
+        });
+      } else return React.createElement("div", {
         style: {
           width: "100%",
           height: height,
           backgroundColor: backgroundColor
-        }
-      });else return React.createElement("div", {
-        style: {
-          width: width,
-          height: height,
-          backgroundColor: backgroundColor,
-          display: "inline-block"
         }
       });
     }
