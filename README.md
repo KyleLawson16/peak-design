@@ -77,7 +77,9 @@ export default class Heading extends React.Component {
 
 ### Properties
 
-| Property        | Type  |
-| --------------- | :---: |
-| height          |  int  |
-| backgroundColor | color |
+| Property        |  Type  | Default     |
+| --------------- | :----: | ----------- |
+| orientation     | string | 'vertical'  |
+| height          |  int   | null        |
+| width           |  int   | null        |
+| backgroundColor | color  | transparent |

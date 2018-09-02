@@ -79,30 +79,41 @@ var possibleConstructorReturn = function (self, call) {
 };
 
 var WhiteSpace$1 = function (_Component) {
-	inherits(WhiteSpace$$1, _Component);
+  inherits(WhiteSpace$$1, _Component);
 
-	function WhiteSpace$$1() {
-		classCallCheck(this, WhiteSpace$$1);
-		return possibleConstructorReturn(this, (WhiteSpace$$1.__proto__ || Object.getPrototypeOf(WhiteSpace$$1)).apply(this, arguments));
-	}
+  function WhiteSpace$$1() {
+    classCallCheck(this, WhiteSpace$$1);
+    return possibleConstructorReturn(this, (WhiteSpace$$1.__proto__ || Object.getPrototypeOf(WhiteSpace$$1)).apply(this, arguments));
+  }
 
-	createClass(WhiteSpace$$1, [{
-		key: 'render',
-		value: function render() {
-			var _props = this.props,
-			    height = _props.height,
-			    backgroundColor = _props.backgroundColor;
+  createClass(WhiteSpace$$1, [{
+    key: "render",
+    value: function render() {
+      var isVertical = true;
+      var _props = this.props,
+          height = _props.height,
+          width = _props.width,
+          orientation = _props.orientation,
+          backgroundColor = _props.backgroundColor;
 
-			return React.createElement('div', {
-				style: {
-					width: '100%',
-					height: height,
-					backgroundColor: backgroundColor
-				}
-			});
-		}
-	}]);
-	return WhiteSpace$$1;
+      if (width && !height || orientation === "horizontal") isVertical = false;
+      if (isVertical) return React.createElement("div", {
+        style: {
+          width: "100%",
+          height: height,
+          backgroundColor: backgroundColor
+        }
+      });else return React.createElement("div", {
+        style: {
+          width: width,
+          height: height,
+          backgroundColor: backgroundColor,
+          display: "inline-block"
+        }
+      });
+    }
+  }]);
+  return WhiteSpace$$1;
 }(Component);
 
 function unwrapExports (x) {
